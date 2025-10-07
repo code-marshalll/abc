@@ -16,19 +16,19 @@ spec:
     spec:
       containers:
         - name: nextjs
-          image: ghcr.io/REPLACE_OWNER/REPLACE_REPO:latest
+          image: ghcr.io/code-marshalll/abc:latest
           ports:
             - containerPort: 3000
           readinessProbe:
             httpGet:
-              path: /api/health
+              path: /api/status
               port: 3000
             initialDelaySeconds: 5
             periodSeconds: 10
             failureThreshold: 3
           livenessProbe:
             httpGet:
-              path: /api/health
+              path: /api/status
               port: 3000
             initialDelaySeconds: 20
             periodSeconds: 20
